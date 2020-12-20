@@ -1,0 +1,4 @@
+.personal-details > div {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
