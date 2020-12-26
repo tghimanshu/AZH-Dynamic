@@ -66,7 +66,7 @@ function login_error() {
       title: '<strong>Login Unsuccessful!</strong>',
       icon: 'error',
       html:
-        'You have successfully made a Booking!',
+        'Invalid UserName Or Password!',
       showCloseButton: true,
       showCancelButton: false,
       focusConfirm: true,
@@ -75,6 +75,24 @@ function login_error() {
       confirmButtonAriaLabel: 'Close',
       preConfirm:function(){
         window.location = 'index.php';
+    }
+  });
+};
+
+function feedback_success() {
+  Swal.fire({
+      title: '<strong>Feedback Successful!</strong>',
+      icon: 'success',
+      html:
+        'You will recieve your certificate shortly!<br>Checkout the best and the finest advisors in India',
+      showCloseButton: true,
+      showCancelButton: true,
+      focusConfirm: true,
+      confirmButtonText:
+        'Register Now',
+      confirmButtonAriaLabel: 'Register Now',
+      preConfirm:function(){
+        window.location = 'client-registration.php';
     }
   });
 };

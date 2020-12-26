@@ -67,7 +67,8 @@
           <div class="col-12 col-lg-6 quick-links">
             <h4 class="font-weight-bold text-uppercase mb-4">QUICK LINKS</h4  >
             <ul class="list-unstyled details">
-              <li class="mt-2"><a href="advisor-registration.php">Register</a></li>
+              <li class="mt-2"><a href="advisor-registration.php">Register - Advisor</a></li>
+              <li class="mt-2"><a href="client-registration.php">Register - Client</a></li>
               <li class="mt-2"><a href="page.php?name=terms-conditions">Terms & Conditions</a></li>
               <li class="mt-2"><a href="page.php?name=privacy-policy">Privacy Policy</a></li>
             </ul>

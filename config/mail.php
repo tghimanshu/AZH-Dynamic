@@ -31,8 +31,7 @@ function reg_mail_advisor($recipient, $name) {
         <h3>What Next?</h3>
         <p>We are happy to have you as a part of our family.Your account is currently under review process. It will be reviewed and approved as soon as possible. On approval, your profile will be available to all the users.</p>
         <br>
-        <br>
-        <br>
+        <video controls='true' src='https://advisorzaroorihai.com/assets/img/azh.mp4' style='width:100%'></video>
         <br>
         <p>For any business queries, </p>
         <p>Please visit: https://advisorzaroorihai.com</p>
@@ -80,8 +79,7 @@ function reg_mail_user($recipient, $name) {
         <h3>What Next?</h3>
         <p>We are happy to have you as a part of our family. We hope that you get all your investment queries dealt with.</p>
         <br>
-        <br>
-        <br>
+        <video controls='true' src='https://advisorzaroorihai.com/assets/img/azh.mp4' style='width:100%'></video>
         <br>
         <p>For any business queries, </p>
         <p>Please visit: https://advisorzaroorihai.com</p>

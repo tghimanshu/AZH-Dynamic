@@ -60,10 +60,11 @@
   //   tinycomments_author: "Author name",
   // });
   CKEDITOR.replace("content");
-  CKEDITOR.editorConfig = function (config) {
-    config.language = "es";
-    config.uiColor = "#F7B42C";
-    config.height = 300;
-    config.toolbarCanCollapse = true;
-  };
+  CKEDITOR.add;
+  // CKEDITOR.editorConfig = function (config) {
+  //   config.language = "es";
+  //   config.uiColor = "#F7B42C";
+  //   config.height = 300;
+  //   config.toolbarCanCollapse = true;
+  // };
 })(jQuery);

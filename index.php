@@ -8,10 +8,16 @@ if(isset($_GET['p'])){
       break;
     case '2':
       echo "<script>client_reg_success();</script>";
+      break;
     case '3':
       echo "<script>client_booking_success();</script>"; 
+      break;
     case '4':
       echo "<script>login_error();</script>";
+      break;
+    case '5':
+      echo "<script>feedback_success();</script>";
+      break;
       
   }
 }

@@ -146,20 +146,6 @@ if(isset($_POST['b_submit'])){
   <div class="row d-flex justify-content-center">
     <div class="col-12 col-lg-5">
       <h3 class="text-center">You must be Logged In to see the Advisors!</h3>
-      <div class="row d-flex justify-content-center">
-        <div class="col-12 col-lg-5">
-          <div class="text-center mb-2">For Users, </div>
-          <a class="btn btn-success d-block mx-auto" style="width:fit-content;" href="landing-clients.php?type=login">Login</a> 
-          <div class="text-center">OR</div> 
-          <a class="btn btn-primary d-block mx-auto" style="width:fit-content;" href="landing-clients.php">Register</a>
-        </div>
-        <div class="col-12 col-lg-5">
-          <div class="text-center mb-2">For Advisors, </div>
-          <a class="btn btn-success d-block mx-auto" style="width:fit-content;" href="landing.php?type=login">Login</a> 
-          <div class="text-center">OR</div> 
-          <a class="btn btn-primary d-block mx-auto" style="width:fit-content;" href="landing.php">Register</a>
-        </div>
-      </div>
     </div>
   </div>
 </div>

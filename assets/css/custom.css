@@ -613,7 +613,7 @@ a.sols-button {
   bottom: 0px;
   right: 10px;
 }
-.e-learning-div .title {
+.e-learning-div .title,.e-learning-div h5 {
   margin: 0px;
   padding-top: 20px;
   color: #fff;
@@ -635,32 +635,38 @@ a.sols-button {
 .pbDiv {
   padding-bottom: 30px;
 }
-.e-learning-div .title {
+.e-learning-div .title,.e-learning-div h5 {
   font-size: 1.2em;
 }
 
-.e-learning-a {
+/* .e-learning-a {
   color: black;
 text-decoration: none;
 cursor: pointer;
 }
 .e-learning-a:hover {
 text-decoration: none;
-}
+} */
 
 
-.e-learning-div .e-learning-a {
+.e-learning-div .e-learning-a,
+a.e-learning-a {
   color: white;
 text-decoration: none;
 cursor: pointer;
 }
-.e-learning-div .e-learning-a:hover {
+.e-learning-div .e-learning-a:hover,
+a.e-learning-a:hover {
 color: white;
 text-decoration: none;
 }
 
 .knowledge_base .modal-content {
-padding: 20px;
+padding: 25px;
+font-size: .8rem;
+}
+.knowledge_base .modal-content a {
+  font-size: 1rem;
 }
 
 #user-advisor button a {
@@ -669,4 +675,33 @@ padding: 20px;
 #user-advisor button:hover a {
   color: white;
   text-decoration: none;
+}
+
+.feedback_form> div {
+  background: #f6f6f6;
+  padding: 20px 20px;
+  margin-bottom: 15px; 
+  border-radius: 10px;
+}
+
+.feedback_form input {
+  background:transparent;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #aaa;
+  transition: 1s border ease-in;
+}
+.feedback_form input:focus {
+  background:transparent;
+  outline: none;
+  border:none;
+  border-bottom: 2px solid #2b32b2;
+  box-shadow: none;
+}
+
+.feedback_form_title {
+  background: #f6f6f6;
+  padding: 20px 20px;
+  /* margin-bottom: 15px;  */
+  border-radius: 10px;
 }

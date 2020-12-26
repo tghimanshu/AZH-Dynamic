@@ -157,7 +157,7 @@ if(isset($_POST['form_func'])) {
             <li class="<?php echo ($page_title == 'Advisors')?'active':''; ?>"><a href="advisors.php">Advisors</a></li>
             <li class="<?php echo ($page_title == 'About Us')?'active':''; ?>"><a href="page.php?name=about-us">About Us</a></li>
             <li class="<?php echo ($page_title == 'E-Learning')?'active':''; ?>"><a href="e-learning.php">E-Learning</a></li>
-            <li class="<?php echo ($page_title == 'Knowledge Base')?'active':''; ?>"><a href="page.php?name=knowledge-base">Knowledge Base</a></li>
+            <li class="<?php echo ($page_title == 'Knowledge Base')?'active':''; ?>"><a href="knowledge-base.php">Knowledge Base</a></li>
             <!-- different look -->
             <li class="get-started">
               <?php if($_SESSION['role']=='users'){ ?>

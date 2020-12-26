@@ -36,10 +36,12 @@ if(isset($_SESSION['username'])){
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+    <script src="https://cdn.ckeditor.com/4.4.7/full/ckeditor.js"></script>
+
   </head>
   <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-      <a class="navbar-brand" href="index.html">AZH ADMIN PANEL</a>
+      <a class="navbar-brand" href="index.php">AZH ADMIN PANEL</a>
       <button
         class="btn btn-link btn-sm order-1 order-lg-0"
         id="sidebarToggle"
@@ -108,6 +110,24 @@ if(isset($_SESSION['username'])){
                   <i class="fas fa-tachometer-alt"></i>
                 </div>
                 Add Solution
+              </a>
+              <a class="nav-link" href="feedback.php">
+                <div class="sb-nav-link-icon">
+                  <i class="fas fa-tachometer-alt"></i>
+                </div>
+                FeedBack Forms
+              </a>
+              <a class="nav-link" href="feedback.php?type=add">
+                <div class="sb-nav-link-icon">
+                  <i class="fas fa-tachometer-alt"></i>
+                </div>
+                Add FeedBack Form
+              </a>
+              <a class="nav-link" href="feedback.php?type=feedbacks">
+                <div class="sb-nav-link-icon">
+                  <i class="fas fa-tachometer-alt"></i>
+                </div>
+                All FeedBacks
               </a>
               <a class="nav-link" href="users.php?type=advisors">
                 <div class="sb-nav-link-icon">

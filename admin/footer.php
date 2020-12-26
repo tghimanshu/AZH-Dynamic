@@ -20,8 +20,8 @@
 
     <script src="../assets/vendor/jquery/jquery.min.js"></script>
     <script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
-    <script src="https://cdn.tiny.cloud/1/p00eltyibovgesn06r3bl8fvy1wdhy33n4ezb0ucy9qecheo/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    <script src="https://cdn.ckeditor.com/4.4.7/full/ckeditor.js"></script>
+    <!-- <script src="https://cdn.tiny.cloud/1/p00eltyibovgesn06r3bl8fvy1wdhy33n4ezb0ucy9qecheo/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script> -->
+    <!-- <script src="https://cdn.ckeditor.com/4.4.7/full/ckeditor.js"></script> -->
 
 
     <script src="js/scripts.js"></script>

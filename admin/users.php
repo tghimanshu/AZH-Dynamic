@@ -30,12 +30,14 @@ $results = mysqli_query($conn, "SELECT * FROM $type;");
 // $solutions = mysqli_fetch_assoc($results);
 
 ?>
+<a class="btn btn-success" href="../config/export.php?table=<?php echo $type ?>">Export As Excel</button>
 <table class="table table-bordered container">
     <tr>
         <th>Sr. No</th>
         <th>Name</th>
         <th>User Name</th>
         <th>E-Mail</th>
+        <th>Contact</th>
         <?php echo ($type == 'advisors')?"<th>Approved</th><th>Actions</th>":""; ?>
         
     </tr>
@@ -48,6 +50,7 @@ $results = mysqli_query($conn, "SELECT * FROM $type;");
             <td><?php echo $solution['name'] ?></td>
             <td><?php echo $solution['username'] ?></td>
             <td><?php echo $solution['email'] ?></td>
+            <td><?php echo $solution['contact'] ?></td>
             <?php if($type == 'advisors'){
                 if($solution['approved'] == '0') {
                     echo "<td>No</td>";
