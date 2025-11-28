@@ -1,4 +1,11 @@
-<?php 
+<?php
+/**
+ * Users/Advisors Management (Admin).
+ *
+ * This page lists users or advisors based on the 'type' GET parameter.
+ * It allows the administrator to view details and approve/disapprove advisors.
+ */
+
 if(isset($_GET['type'])){
     $type = $_GET['type'];
 } else {
@@ -11,6 +18,7 @@ if(isset($_GET['type'])){
 
 <?php  
 
+// Handle approval/disapproval of advisors
 if(isset($_GET['id']) && isset($_GET['approve'])){
     $advisor = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM $type WHERE id = ".$_GET['id']));
     if($advisor['approved'] == '0'){

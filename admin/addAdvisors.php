@@ -1,8 +1,17 @@
-<?php $title = 'Add Advisor | AZH' ?>
+<?php
+/**
+ * Add Advisor Page (Admin).
+ *
+ * This page allows the administrator to manually add a new advisor to the database.
+ * It handles the form submission and inserts the advisor details.
+ */
+$title = 'Add Advisor | AZH'
+?>
 
 <?php include('header.php') ?>
 <?php 
 
+// Handle form submission to add a new advisor
 if(isset($_POST['submit'])){
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $experience = mysqli_real_escape_string($conn, $_POST['experience']);

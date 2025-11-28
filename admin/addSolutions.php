@@ -1,8 +1,17 @@
-<?php $title = 'Add Solutions | AZH' ?>
+<?php
+/**
+ * Add Solutions Page (Admin).
+ *
+ * This page allows the administrator to add a new "solution" (likely a service or offering).
+ * It includes fields for name, description, and multiple FAQ questions and answers.
+ */
+$title = 'Add Solutions | AZH'
+?>
 
 <?php include('header.php') ?>
 <?php 
 
+// Handle form submission to add a new solution
 if(isset($_POST['submit'])){
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $description = mysqli_real_escape_string($conn, $_POST['description']);

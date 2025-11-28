@@ -1,8 +1,17 @@
-<?php $page_title = 'Advisors'; ?>
+<?php
+/**
+ * Advisors Listing and Booking Page.
+ *
+ * This page lists available advisors and allows users to book appointments.
+ * It handles the booking form submission and displays individual advisor details.
+ */
+$page_title = 'Advisors';
+?>
 <?php include('header.php') ?>
 
 <?php 
 
+// Handle booking form submission
 if(isset($_POST['b_submit'])){
   $advisor_id = mysqli_real_escape_string($conn, $_POST['advisor_id']);
   $username = mysqli_real_escape_string($conn, $_POST['username']);
@@ -26,7 +35,14 @@ if(isset($_POST['b_submit'])){
 
 ?>
 
-<?php function advisors($conn){ ?>
+<?php
+/**
+ * Displays the list of approved advisors.
+ *
+ * @param mysqli $conn The database connection object.
+ * @return void
+ */
+function advisors($conn){ ?>
   <?php $result = mysqli_query($conn, "SELECT * FROM advisors WHERE `approved` = '1';"); ?>
   <section id="solutions-hero" class="d-flex align-items-center">
     <div class="container">
@@ -90,7 +106,16 @@ if(isset($_POST['b_submit'])){
                 SINGLE ADVISOR
  ---------------------------------------->
 
-<?php function single_advisor($conn){ ?>
+<?php
+/**
+ * Displays details for a single advisor.
+ *
+ * Fetches advisor details based on the 'id' GET parameter.
+ *
+ * @param mysqli $conn The database connection object.
+ * @return void
+ */
+function single_advisor($conn){ ?>
   <?php $result = mysqli_query($conn, "SELECT * FROM advisors WHERE id = ".$_GET['id'].";"); ?>
   <?php $advisor = mysqli_fetch_assoc($result); ?>
   <div class="p-title"></div>
@@ -134,7 +159,13 @@ if(isset($_POST['b_submit'])){
 
 <?php } ?>
 
-<?php function login_or_register(){ ?>
+<?php
+/**
+ * Displays a message prompting the user to login or register.
+ *
+ * @return void
+ */
+function login_or_register(){ ?>
 
   <section id="solutions-hero" class="d-flex align-items-center">
     <div class="container">

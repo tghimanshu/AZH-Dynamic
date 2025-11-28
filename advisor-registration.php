@@ -1,11 +1,20 @@
-<?php $page_title = 'Home'; ?>
+<?php
+/**
+ * Advisor Registration and Login Page.
+ *
+ * This page handles advisor registration and login.
+ * It displays the registration or login form based on the 'type' GET parameter.
+ * It also handles file uploads for profile pictures and validates SEBI registration numbers.
+ */
+$page_title = 'Home';
+?>
 <?php include('header.php') ?>
 
 <?php 
 
 $_SESSION['errorMessage'] = '';
 
-
+// Handle advisor registration form submission
 if(isset($_POST['submit'])){
     $username = mysqli_real_escape_string($conn, $_POST['username']);
     $name = mysqli_real_escape_string($conn, $_POST['name']);
@@ -61,7 +70,13 @@ if(isset($_POST['submit'])){
 
 ?>
 
-<?php function login_me(){ ?>
+<?php
+/**
+ * Displays the advisor login form.
+ *
+ * @return void
+ */
+function login_me(){ ?>
 
 <section id="solutions-hero" class="d-flex align-items-center">
   <div class="container d-flex justify-content-center">
@@ -86,7 +101,13 @@ if(isset($_POST['submit'])){
 </div>
 <?php } ?>
 
-<?php function register_me(){ ?>
+<?php
+/**
+ * Displays the advisor registration form.
+ *
+ * @return void
+ */
+function register_me(){ ?>
 <?php    
  global $username;
  global $name;

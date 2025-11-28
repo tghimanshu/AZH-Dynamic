@@ -1,5 +1,25 @@
 <?php 
+/**
+ * Certificate Generation and Emailing.
+ *
+ * This file contains a function to generate a personalized certificate image with a name
+ * and email it to a recipient.
+ */
+
 include('db.php');
+
+/**
+ * Generates and mails a certificate.
+ *
+ * This function creates a certificate image using a template and a specific font,
+ * overlays the recipient's name, encodes the image as base64, and sends it as an
+ * email attachment.
+ *
+ * @param string $name The name of the recipient to appear on the certificate.
+ * @param string $email The email address of the recipient.
+ * @param int $form_id The ID of the feedback form to retrieve the certificate template.
+ * @return void
+ */
 function mail_certificate($name, $email, $form_id){
     global $conn;
     $font = "C:/xampp/htdocs/config/Roboto-Bold.ttf";

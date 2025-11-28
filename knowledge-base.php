@@ -1,7 +1,12 @@
-<?php 
-
+<?php
+/**
+ * Knowledge Base Page.
+ *
+ * This page displays various educational resources and articles (knowledge base)
+ * covering topics like alternative investments, estate planning, fixed income, insurance, etc.
+ * The content is statically defined within the HTML structure.
+ */
 $page_title = 'Knowledge Base';
-
 ?>
 <?php require('header.php') ?>
 <div class="p-title">

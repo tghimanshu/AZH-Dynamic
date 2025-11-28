@@ -1,10 +1,19 @@
-<?php $page_title = 'Home'; ?>
+<?php
+/**
+ * Client Registration and Login Page.
+ *
+ * This page handles user (client) registration and login.
+ * It displays the registration or login form based on the 'type' GET parameter.
+ */
+$page_title = 'Home';
+?>
 <?php include('header.php') ?>
 
 <?php 
 
 $_SESSION['errorMessage'] = '';
 
+// Handle registration form submission
 if(isset($_POST['submit'])){
     $username = mysqli_real_escape_string($conn, $_POST['username']);
     $name = mysqli_real_escape_string($conn, $_POST['name']);
@@ -31,7 +40,13 @@ if(isset($_POST['submit'])){
 ?>
 
 
-<?php function login_me(){ ?>
+<?php
+/**
+ * Displays the user login form.
+ *
+ * @return void
+ */
+function login_me(){ ?>
 
 <section id="solutions-hero" class="d-flex align-items-center">
   <div class="container d-flex justify-content-center">
@@ -56,7 +71,13 @@ if(isset($_POST['submit'])){
 </div>
 <?php } ?>
 
-<?php function register_me(){ ?>
+<?php
+/**
+ * Displays the user registration form.
+ *
+ * @return void
+ */
+function register_me(){ ?>
 <section id="solutions-hero" class="d-flex align-items-center">
   <div class="container">
     <h1>Welcome To AZH, Users!</h1>

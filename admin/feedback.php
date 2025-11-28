@@ -1,4 +1,11 @@
-<?php 
+<?php
+/**
+ * Feedback Management (Admin).
+ *
+ * This page allows the administrator to view all feedback forms, add new forms (with or without certificates),
+ * and view submitted feedbacks. It uses a switch-case structure to handle different views based on the 'type' GET parameter.
+ */
+
 if(isset($_GET['type'])){
     if($_GET['type'] == 'add'){
         $type = 'add';
@@ -21,6 +28,8 @@ if(isset($_GET['type'])){
 <?php //$title = 'FeedBack'; ?>
 <?php include('header.php'); ?>
 <?php 
+
+// Handle form submission for adding a feedback form with a certificate image
 if(isset($_POST['submit_image'])) {
     $title = $_POST['title'];
     $desc = $_POST['desc'];
@@ -39,6 +48,8 @@ if(isset($_POST['submit_image'])) {
 }
 ?>
 <?php 
+
+// Handle form submission for adding a standard feedback form
 if(isset($_POST['submit'])) {
     $title = $_POST['title'];
     $desc = $_POST['desc'];
@@ -51,7 +62,14 @@ if(isset($_POST['submit'])) {
 }
 ?>
 
-<?php function all_forms($conn) { ?>
+<?php
+/**
+ * Displays all feedback forms.
+ *
+ * @param mysqli $conn The database connection object.
+ * @return void
+ */
+function all_forms($conn) { ?>
     <div class="container">
         <table class="table">
             <tr>
@@ -74,7 +92,14 @@ if(isset($_POST['submit'])) {
         </table>
     </div>
 <?php } ?>
-<?php function add_form($conn) { ?>
+<?php
+/**
+ * Displays the form to add a new feedback form.
+ *
+ * @param mysqli $conn The database connection object.
+ * @return void
+ */
+function add_form($conn) { ?>
     <form class="container" action="feedback.php" method="POST">
         <div>
             <label for="title">Title: </label>
@@ -95,7 +120,14 @@ if(isset($_POST['submit'])) {
         <button type="submit" name="submit" class="btn btn-success">Add Form</button>
     </form>
 <?php } ?>
-<?php function add_form_image($conn) { ?>
+<?php
+/**
+ * Displays the form to add a new feedback form with a certificate image.
+ *
+ * @param mysqli $conn The database connection object.
+ * @return void
+ */
+function add_form_image($conn) { ?>
     <form class="container" action="feedback.php" method="POST" enctype="multipart/form-data">
         <div>
             <label for="title">Title: </label>
@@ -120,7 +152,14 @@ if(isset($_POST['submit'])) {
         <button type="submit" name="submit_image" class="btn btn-success">Add Form</button>
     </form>
 <?php } ?>
-<?php function all_feedbacks($conn){ ?>
+<?php
+/**
+ * Displays all submitted feedbacks.
+ *
+ * @param mysqli $conn The database connection object.
+ * @return void
+ */
+function all_feedbacks($conn){ ?>
     <a class="btn btn-success" href="../config/export.php?table=feedbacks">Export As Excel</button>
     <table class="table table-bordered container">
     <tr>

@@ -1,8 +1,17 @@
-<?php $title = 'Bookings | AZH' ?>
+<?php
+/**
+ * Advisor Bookings Management.
+ *
+ * This page lists the bookings made by users for the logged-in advisor.
+ * It allows the advisor to approve bookings.
+ */
+$title = 'Bookings | AZH'
+?>
 
 <?php include('header.php') ?>
 <?php 
 
+// Handle booking approval
 if(isset($_GET['id'])){
     $id = $_GET['id'];
     $bk = mysqli_query($conn, "UPDATE `bookings` SET approved = '1' WHERE id = ".$_GET['id']);
