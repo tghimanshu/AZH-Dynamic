@@ -1,4 +1,12 @@
 <?php
+/**
+ * Export data to Excel.
+ *
+ * This script fetches data from a specified table (currently hardcoded to 'feedbacks')
+ * and exports it as an Excel (.xls) file.
+ *
+ * It checks for the 'table' GET parameter, though it currently seems to default to 'feedbacks'.
+ */
 
 if (isset($_GET['table'])) {
     $filename = $_GET['table'];

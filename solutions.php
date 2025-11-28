@@ -1,4 +1,12 @@
-<?php include('header.php') ?>
+<?php
+/**
+ * Solution Details Page.
+ *
+ * This page displays details for a specific solution based on the 'id' GET parameter.
+ * It fetches solution information (name, description, FAQs) from the database and renders it.
+ */
+include('header.php')
+?>
 <?php 
 
 if (isset($_GET['id'])){

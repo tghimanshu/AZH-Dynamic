@@ -1,4 +1,11 @@
-<?php $page_title = 'E-Learning'; ?>
+<?php
+/**
+ * E-Learning Page.
+ *
+ * This page displays a collection of e-learning resources fetched from the database.
+ */
+$page_title = 'E-Learning';
+?>
 <?php include('header.php') ?>
 <?php 
 

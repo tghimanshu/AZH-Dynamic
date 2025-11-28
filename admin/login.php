@@ -1,6 +1,15 @@
-<?php include('../config/db.php'); ?>
+<?php
+/**
+ * Admin Login Page.
+ *
+ * This page handles administrator authentication and logout.
+ * It checks credentials against the 'admins' table.
+ */
+include('../config/db.php');
+?>
 
 <?php 
+    // Handle logout
     if(isset($_GET['logout'])){
         session_start();
         session_destroy();
@@ -9,6 +18,7 @@
 ?>
 
 <?php 
+// Handle login form submission
 $errorMsg = '';
 if(isset($_POST['submit'])){
     $email = mysqli_real_escape_string($conn, $_POST['email']);

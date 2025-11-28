@@ -1,4 +1,12 @@
-<?php $title = 'Add Advisor | AZH' ?>
+<?php
+/**
+ * Edit Advisor Profile.
+ *
+ * This page allows the logged-in advisor to edit their profile information,
+ * including name, experience, SEBI registration number, position, location, summary, and profile picture.
+ */
+$title = 'Add Advisor | AZH'
+?>
 <?php 
 if(isset($_GET['complete'])){
     $title = 'Complete Profile | AZH';
@@ -8,6 +16,7 @@ if(isset($_GET['complete'])){
 
 <?php 
 
+// Handle profile update form submission
 if(isset($_POST['submit'])){
     $id = mysqli_real_escape_string($conn, $_POST['id']);
     $name = mysqli_real_escape_string($conn, $_POST['name']);

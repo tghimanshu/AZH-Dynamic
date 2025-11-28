@@ -1,4 +1,12 @@
-<?php $page_title = 'FeedBack'; ?>
+<?php
+/**
+ * Feedback Form Page.
+ *
+ * This page displays a feedback form based on the 'id' GET parameter.
+ * It handles form submission, stores feedback in the database, and sends a certificate to the user via email.
+ */
+$page_title = 'FeedBack';
+?>
 <?php require('config/certificate.php'); ?>
 <?php 
 
@@ -8,6 +16,7 @@ if(!isset($_GET['id'])){
 ?>
 <?php require('header.php') ?>
 <?php 
+// Display success or error messages based on 'type' GET parameter
 if (isset($_GET['type'])) {
     if ($_GET['type'] == 'thanks'){
         echo 'thanks';
@@ -18,6 +27,7 @@ if (isset($_GET['type'])) {
 }
 ?>
 <?php 
+// Handle feedback form submission
 if(isset($_POST['submit'])){
     $form_id = $_POST['form_id'];
     $name = $_POST['name'];

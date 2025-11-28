@@ -1,4 +1,12 @@
-<?php $title = 'Solutions | AZH' ?>
+<?php
+/**
+ * Pages Management (Admin).
+ *
+ * This page lists all dynamic pages in the system.
+ * It allows the administrator to view and edit existing pages.
+ */
+$title = 'Solutions | AZH'
+?>
 
 <?php include('header.php') ?>
 

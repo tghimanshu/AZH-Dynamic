@@ -1,7 +1,17 @@
-<?php $title = 'Add Advisor | AZH' ?>
+<?php
+/**
+ * Add/Edit Page (Admin).
+ *
+ * This page allows the administrator to add a new page or edit an existing one.
+ * If an 'id' GET parameter is provided, it pre-fills the form with existing page data.
+ * It handles the form submission for both creation and updates.
+ */
+$title = 'Add Advisor | AZH'
+?>
 <?php include('header.php') ?>
 <?php 
 
+// Check if we are in edit mode
 if(isset($_GET['id'])){
     $query = mysqli_query($conn, "SELECT * FROM pages WHERE id = ".$_GET['id']);
     $page = mysqli_fetch_assoc($query);
@@ -17,6 +27,7 @@ if(isset($_GET['id'])){
 ?>
 <?php 
 
+// Handle form submission for adding or updating a page
 if(isset($_POST['submit'])){
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $slug = mysqli_real_escape_string($conn, $_POST['slug']);

@@ -1,4 +1,12 @@
-<?php include('header.php'); ?>
+<?php
+/**
+ * User Account/Bookings Page.
+ *
+ * This page displays the bookings for the currently logged-in user (client).
+ * It redirects guests to the login page and advisors to the advisor dashboard.
+ */
+include('header.php');
+?>
 <?php 
 if($_SESSION['role'] == 'guest'){
   echo "<script>window.location='/client-registration.php?type=login';</script>";

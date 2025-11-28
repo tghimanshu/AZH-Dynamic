@@ -1,4 +1,12 @@
-<?php $title = 'Dashboard | AZH' ?>
+<?php
+/**
+ * Advisor Dashboard.
+ *
+ * This page displays the advisor's dashboard, showing their profile details and approval status.
+ * It provides a link to edit profile details.
+ */
+$title = 'Dashboard | AZH'
+?>
 
 <?php include('header.php') ?>
 

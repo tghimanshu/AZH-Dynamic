@@ -1,6 +1,15 @@
-﻿<?php $page_title = 'Home'; ?>
+<?php
+/**
+ * Home Page.
+ *
+ * This is the landing page of the Advisor Zaroori Hai application.
+ * It displays key information, handles user queries, and displays success/error messages based on GET parameters.
+ */
+$page_title = 'Home';
+?>
 <?php include('header.php'); ?>
 <?php 
+// Handle various success/error message triggers via GET parameters
 if(isset($_GET['p'])){
   switch($_GET['p']){
     case '1':
@@ -23,6 +32,7 @@ if(isset($_GET['p'])){
 }
 ?>
 <?php 
+// Handle form submission for posting a user query
 if(isset($_POST['submit']) && isset($_POST['post_your_query'])){
   $name = $_POST['name'];
   $phone = $_POST['phone'];

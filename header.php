@@ -1,6 +1,14 @@
 <?php //require('config/db.php') ?>
 
 <?php 
+/**
+ * Header and Authentication Logic.
+ *
+ * This file is included at the beginning of most pages. It initializes the session,
+ * includes configuration files, and handles user authentication (login/register) logic.
+ * It also outputs the HTML header, including meta tags, stylesheets, and the navigation menu.
+ */
+
 require('config/db.php');
 require('config/mail.php');
 session_start();
@@ -9,6 +17,13 @@ if(!isset($_SESSION['role'])){
 }
 
 if(isset($_POST['form_func'])) {
+  /**
+   * Handles user login.
+   *
+   * @param string $table_name The table name to authenticate against ('users' or 'advisors').
+   * @param mysqli $conn The database connection object.
+   * @return void
+   */
   function login_form($table_name, $conn){
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $pwd = md5(mysqli_real_escape_string($conn, $_POST['pwd']));
@@ -27,6 +42,14 @@ if(isset($_POST['form_func'])) {
       // die('error'.mysqli_error($conn));
     }
   }
+
+  /**
+   * Handles user registration.
+   *
+   * @param string $table_name The table name to register into ('users' or 'advisors').
+   * @param mysqli $conn The database connection object.
+   * @return void
+   */
   function register_form($table_name, $conn){
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $username = mysqli_real_escape_string($conn, $_POST['username']);

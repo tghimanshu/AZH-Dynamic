@@ -1,4 +1,11 @@
-<?php 
+<?php
+/**
+ * Dynamic Page Renderer.
+ *
+ * This script fetches and displays content for a specific page based on the 'name' GET parameter (slug).
+ * It retrieves the page content from the database and renders it.
+ */
+
 if(isset($_GET['name'])){
     $slug = $_GET['name'];
 }else {

@@ -1,4 +1,12 @@
-<?php $title = 'Solutions | AZH' ?>
+<?php
+/**
+ * Admin Dashboard/Solutions List.
+ *
+ * This page lists all the solutions managed by the admin.
+ * It provides a table view of solutions with links to view details.
+ */
+$title = 'Solutions | AZH'
+?>
 
 <?php include('header.php') ?>
 

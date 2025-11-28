@@ -1,5 +1,18 @@
 <?php 
+/**
+ * Mail Utility Functions.
+ *
+ * This file contains functions to send various email notifications to users and advisors
+ * using the PHP mail() function.
+ */
 
+/**
+ * Sends a registration email to an advisor.
+ *
+ * @param string $recipient The email address of the advisor.
+ * @param string $name The name of the advisor.
+ * @return void
+ */
 function reg_mail_advisor($recipient, $name) {
     $subject = "Thank you for registering to Advisor Zaroori Hai";
     $body = "
@@ -48,6 +61,14 @@ function reg_mail_advisor($recipient, $name) {
         die("Email Error");
     }
 }
+
+/**
+ * Sends a registration email to a user.
+ *
+ * @param string $recipient The email address of the user.
+ * @param string $name The name of the user.
+ * @return void
+ */
 function reg_mail_user($recipient, $name) {
     $subject = "Thank you for registering to Advisor Zaroori Hai";
     $body = "
@@ -96,6 +117,18 @@ function reg_mail_user($recipient, $name) {
         die("Email Error");
     }
 }
+
+/**
+ * Sends a booking alert email to an advisor.
+ *
+ * @param mysqli $conn The database connection object (unused in this function but passed for consistency).
+ * @param string $user_name The name of the user who made the booking.
+ * @param string $advisor_name The name of the advisor.
+ * @param string $b_date The date of the booking.
+ * @param string $b_time The time of the booking.
+ * @param string $advisor_email The email address of the advisor.
+ * @return void
+ */
 function booking_mail_advisor($conn,$user_name, $advisor_name, $b_date, $b_time, $advisor_email) {
     $subject = "New Booking Alert dated $b_date at $b_time";
     $body = "
@@ -144,6 +177,18 @@ function booking_mail_advisor($conn,$user_name, $advisor_name, $b_date, $b_time,
     }else{
     }
 }
+
+/**
+ * Sends a booking confirmation email to a user.
+ *
+ * @param mysqli $conn The database connection object (unused in this function but passed for consistency).
+ * @param string $user_name The name of the user.
+ * @param string $advisor_name The name of the advisor.
+ * @param string $b_date The date of the booking.
+ * @param string $b_time The time of the booking.
+ * @param string $user_email The email address of the user.
+ * @return void
+ */
 function booking_mail_user($conn,$user_name, $advisor_name, $b_date, $b_time, $user_email) {
     $subject = "Booking Created dated $b_date at $b_time";
     $body = "
@@ -192,6 +237,16 @@ function booking_mail_user($conn,$user_name, $advisor_name, $b_date, $b_time, $u
     }
 }
 
+/**
+ * Sends a booking approval email to an advisor.
+ *
+ * Fetches user and advisor details from the database.
+ *
+ * @param mysqli $conn The database connection object.
+ * @param int $user_id The ID of the user.
+ * @param int $advisor_id The ID of the advisor.
+ * @return void
+ */
 function booking_mail_advisor_approved($conn,$user_id, $advisor_id) {
     $advisor = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM advisors WHERE id = $advisor_id;"));
     $user = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM users WHERE id = $user_id;"));
@@ -249,6 +304,16 @@ function booking_mail_advisor_approved($conn,$user_id, $advisor_id) {
     }
 }
 
+/**
+ * Sends a booking approval email to a user.
+ *
+ * Fetches user and advisor details from the database.
+ *
+ * @param mysqli $conn The database connection object.
+ * @param int $user_id The ID of the user.
+ * @param int $advisor_id The ID of the advisor.
+ * @return void
+ */
 function booking_mail_user_approved($conn,$user_id, $advisor_id) {
     $advisor = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM advisors WHERE id = $advisor_id;"));
     $user = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM users WHERE id = $user_id;"));
@@ -307,6 +372,15 @@ function booking_mail_user_approved($conn,$user_id, $advisor_id) {
 <!-- <video controls="true" src="https://advisorzaroorihai.com/assets/img/azh.mp4" style="width:100%"></video> -->
 <?php 
 
+/**
+ * Sends an account approval email to an advisor.
+ *
+ * Fetches advisor details from the database.
+ *
+ * @param mysqli $conn The database connection object.
+ * @param int $advisor_id The ID of the advisor.
+ * @return void
+ */
 function advisor_account_approved($conn,$advisor_id) {
     $advisor = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM advisors WHERE id = $advisor_id;"));
     $name= $advisor['name'];
